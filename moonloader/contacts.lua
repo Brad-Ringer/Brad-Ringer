@@ -628,13 +628,6 @@ function onlines()
 	end
 end
 
-function onScriptTerminate(scr, quitGame) 
-	if(scr == script.this) then 
-		showCursor(false) 
-		inicfg.save(config, dir)
-	end
-end
-
 function apply_style()
 	local s = imgui.GetStyle()
 	local clrs = s.Colors
