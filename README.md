@@ -9,7 +9,9 @@ Place contacts.ini inside the "Ringer's Config" folder
 Requirements (given on the forums thread):
 
 • Sampfuncs
+
 • Moonloader
+
 • Library files
 
 https://forums.hzgaming.net/showthread.php/430742-LUA-Contacts
