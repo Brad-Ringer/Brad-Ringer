@@ -1,7 +1,7 @@
 script_name("Contacts")
 script_description("Add your contacts and see if they are online!")
 script_version_number("1")
-script_version("1.2")
+script_version("1.3")
 script_authors("Nisad Rahman/Brad Ringer/Farid Speed/Adib Itsuki")
 script_dependencies("Libraries: ImGui , Events , Encoding , Default")
 
@@ -321,13 +321,14 @@ function imgui.OnDrawFrame()
 							if(smessage == nil) then
 								smessage = "Hi!"
 							end
-							if imgui.Button("Call", imgui.ImVec2(60, 25)) then
+							-- the variable s in the buttons is used to fix a bug which prevents from only the top buttons being usable
+							if imgui.Button(s .. " - Call", imgui.ImVec2(60, 25)) then
 								sampSendChat(string.format("/call %s", number))
 								main_window_state.v = not main_window_state.v
 								imgui.Process = main_window_state.v
 							end
 							imgui.SameLine()
-							if imgui.Button("SMS", imgui.ImVec2(60, 25)) then
+							if imgui.Button(s .. " - SMS", imgui.ImVec2(60, 25)) then
 								sampSendChat(string.format("/sms %s %s", number, smessage))
 								main_window_state.v = not main_window_state.v
 								imgui.Process = main_window_state.v
